@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{%block content%}
+<h1>Want to work together?</h1>
+<p>Send me a message using the form below and I'll get back to you</p>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+   <div class="row" id="contact_us_form">
+  <div class="col-sm-5 form-group">
+    <input class="form-control" id="name" name="fname" placeholder="First Name" type="text" required>
+    <input class="form-control" id="name" name="lname" placeholder="Last Name" type="text" required>
+    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+  </div>
+  <div class="col-sm-7 form-group">
+    <textarea class="form-control" id="comments" name="comments" placeholder="Message" rows="5"></textarea>
+  </div>
+  <div class="col-sm-12 form-group"><button type="button" class="btn btn-outline-primary" type="submit">Send</button></div>
+</div>
+
+
+</form>
+{%endblock%}

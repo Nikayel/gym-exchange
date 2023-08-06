@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Comic books List</h1>
+
+{% for comic in comics %}
+    <a href="{% url 'detail' comic.id %}">
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ comic.title }}</span>
+      <p>Price: {{ comic.price }}</p>
+      <p>Written by: {{ comic.written_by}}</p>
+      {% if comics.stock > 0 %}
+        <p>stock: {{ comic.stock }}</p>
+      {% else %}
+        <p>stock : sold out</p>
+      {% endif %}
+    </div>
+    </a>
+  </div>
+{% endfor %}
+
+{% endblock %}
